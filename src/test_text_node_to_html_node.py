@@ -1,6 +1,6 @@
 from textnode import TextNode
 from leafnode import LeafNode
-import main
+from text_node_to_html_node import text_node_to_html_node
 import unittest
 
 
@@ -14,26 +14,26 @@ class TestMain(unittest.TestCase):
         image_node = TextNode("This is an image node", "image", "https://image.com")
 
         self.assertEqual(
-                main.text_node_to_html_node(text_node),
+                text_node_to_html_node(text_node),
                 LeafNode(None, text_node.text)
                 )
         self.assertEqual(
-                main.text_node_to_html_node(bold_node),
+                text_node_to_html_node(bold_node),
                 LeafNode("b", bold_node.text)
                 )
         self.assertEqual(
-                main.text_node_to_html_node(italic_node),
+                text_node_to_html_node(italic_node),
                 LeafNode("i", italic_node.text)
                 )
         self.assertEqual(
-                main.text_node_to_html_node(code_node),
+                text_node_to_html_node(code_node),
                 LeafNode("code", code_node.text)
                 )
         self.assertEqual(
-                main.text_node_to_html_node(link_node),
+                text_node_to_html_node(link_node),
                 LeafNode("a", link_node.text, {"href": link_node.url})
                 )
         self.assertEqual(
-                main.text_node_to_html_node(image_node),
+                text_node_to_html_node(image_node),
                 LeafNode("img", "", {"src": image_node.url, "alt": image_node.text})
                 )
