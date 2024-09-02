@@ -16,14 +16,14 @@ class TestSplitNodesLink(unittest.TestCase):
                 split_nodes_link(nodes),
                 [
                     TextNode("normal text ", "text"),
-                    TextNode("[link text](https://link-to-somewhere)", "link", "https://link-to-somewhere"),
-                    TextNode("[link text](https://link-to-somewhere)", "link", "https://link-to-somewhere"),
+                    TextNode("link text", "link", "https://link-to-somewhere"),
+                    TextNode("link text", "link", "https://link-to-somewhere"),
                     TextNode(" normal text", "text"),
-                    TextNode("[hyperlinked text](https://link/to/somewhere)", "link", "https://link/to/somewhere"),
-                    TextNode("[another hyperlink](https://link/to/nowhere)", "link", "https://link/to/nowhere"),
-                    TextNode("[linked text](https://link/url)", "link", "https://link/url"),
+                    TextNode("hyperlinked text", "link", "https://link/to/somewhere"),
+                    TextNode("another hyperlink", "link", "https://link/to/nowhere"),
+                    TextNode("linked text", "link", "https://link/url"),
                     TextNode(" normal text ", "text"),
-                    TextNode("[hyperlink](https://link/2/)", "link", "https://link/2/")
+                    TextNode("hyperlink", "link", "https://link/2/")
                 ]
             )
 
