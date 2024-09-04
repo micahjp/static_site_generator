@@ -3,14 +3,16 @@ string = '''![This is an alt text.](/image/sample.webp "This is a sample image."
 ## Headers
 
 # This is a Heading h1
+
 ## This is a Heading h2
+
 ###### This is a Heading h6
 
 ## Emphasis
 
-*This text will be italic*  
+*This text will be italic*
 
-**This text will be bold**  
+**This text will be bold**
 
 ## Lists
 

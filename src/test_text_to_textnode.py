@@ -1,4 +1,4 @@
-from main import text_to_textnode
+from text_node_conversions import text_to_textnode
 from textnode import TextNode
 import unittest
 

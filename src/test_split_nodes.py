@@ -1,7 +1,5 @@
 from textnode import TextNode
-from split_nodes import split_nodes_delimiter
-from split_nodes import split_nodes_image
-from split_nodes import split_nodes_link
+from split_text_nodes import split_nodes_delimiter, split_nodes_link, split_nodes_image
 import unittest
 
 
