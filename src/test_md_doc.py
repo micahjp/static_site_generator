@@ -2,7 +2,7 @@ string = '''![This is an alt text.](/image/sample.webp "This is a sample image."
 
 ## Headers
 
-# This is a Heading h1
+# This is a Heading with **bold text** nested inside
 
 ## This is a Heading h2
 

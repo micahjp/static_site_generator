@@ -45,6 +45,9 @@ def block_to_children(block, block_type):
 
     if block_type == "code":
         text_nodes = text_to_textnode(block[3:-3])
+    elif block_type == "heading":
+        size = get_heading_size(block)
+        text_nodes = text_to_textnode(block[size + 1:])
     else:
         text_nodes = text_to_textnode(block)
 
@@ -72,7 +75,7 @@ def block_to_htmlnode(block, block_type):
             size = get_heading_size(block)
             if children:
                 return ParentNode(f"h{size}", children)
-            return LeafNode(f"h{size}", block)
+            return LeafNode(f"h{size}", block[size + 1:])
         case "code":
             if children:
                 return ParentNode("pre", [ParentNode("code", children)])
