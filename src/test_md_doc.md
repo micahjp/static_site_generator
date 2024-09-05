@@ -1,4 +1,4 @@
-string = '''![This is an alt text.](/image/sample.webp "This is a sample image.")
+# Title Here
 
 ## Headers
 
@@ -57,4 +57,4 @@ alert(message);
 
 ## Inline code
 
-This web site is using `markedjs/marked`.'''
+This web site is using `markedjs/marked`.
