@@ -37,17 +37,33 @@ def block_to_block_type(block):
 
 def block_to_children(block, block_type):
     if block_type == "unordered_list":
+        list_item_nodes = []
         items = block.split("\n")
-        return list(map(lambda item: LeafNode("li", item[2:]), items))
+        for item in items:
+            child_text_nodes = text_to_textnode(item[2:])
+            children = list(map(lambda child_text_node: text_node_to_html_node(child_text_node), child_text_nodes))
+            list_item_nodes.append(ParentNode("li", children))
+        return list_item_nodes
+
     if block_type == "ordered_list":
+        list_item_nodes = []
         items = block.split("\n")
-        return list(map(lambda item: LeafNode("li", item[3:]), items))
+        for item in items:
+            child_text_nodes = text_to_textnode(item[3:])
+            children = list(map(lambda child_text_node: text_node_to_html_node(child_text_node), child_text_nodes))
+            list_item_nodes.append(ParentNode("li", children))
+        return list_item_nodes
 
     if block_type == "code":
         text_nodes = text_to_textnode(block[3:-3])
     elif block_type == "heading":
         size = get_heading_size(block)
         text_nodes = text_to_textnode(block[size + 1:])
+    elif block_type == "quote":
+        cleaned_block = "".join(block.split(">"))
+        if cleaned_block[0] == " ":
+            cleaned_block = cleaned_block[1:]
+        text_nodes = text_to_textnode(cleaned_block)
     else:
         text_nodes = text_to_textnode(block)
 
@@ -83,7 +99,10 @@ def block_to_htmlnode(block, block_type):
         case "quote":
             if children:
                 return ParentNode("blockquote", children)
-            return LeafNode("blockquote", "".join(block.split(">")))
+            cleaned_quote_block = "".join(block.split(">"))
+            if cleaned_quote_block[0] == " ":
+                cleaned_quote_block = cleaned_quote_block[1:]
+            return LeafNode("blockquote", cleaned_quote_block)
         case "unordered_list":
             return ParentNode("ul", children)
         case "ordered_list":

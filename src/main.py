@@ -1,4 +1,4 @@
-from extract_and_generate_page import generate_page
+from extract_and_generate_page import generate_pages_recursive
 import os
 import shutil
 
@@ -36,15 +36,15 @@ def main():
     root_dir = os.getcwd() + "/"
     destination_dir = f"{root_dir}public/"
     source_dir = f"{root_dir}static/"
-    gen_page_from_path = f"{root_dir}content/index.md"
+    gen_page_from_path = f"{root_dir}content/"
     template_path = f"{root_dir}template.html"
-    gen_page_to_path = f"{root_dir}public/index.html"
+    gen_page_to_path = f"{root_dir}public/"
 
     delete_dir_contents(destination_dir)
 
     copy_dir_contents(source_dir, destination_dir)
 
-    generate_page(gen_page_from_path, template_path, gen_page_to_path)
+    generate_pages_recursive(gen_page_from_path, template_path, gen_page_to_path)
 
 
 if __name__ == "__main__":

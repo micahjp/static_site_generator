@@ -49,9 +49,9 @@ class TestMarkdownToHtmlNode(unittest.TestCase):
                             LeafNode(None, " words inside of it."),
                             ]),
                         ParentNode("ul", [
-                            LeafNode("li", "This is the first list item in a list block"),
-                            LeafNode("li", "This is a list item"),
-                            LeafNode("li", "This is another list item")
+                            ParentNode("li", [LeafNode(None, "This is the first list item in a list block")]),
+                            ParentNode("li", [LeafNode(None, "This is a list item")]),
+                            ParentNode("li", [LeafNode(None, "This is another list item")])
                             ]),
                         LeafNode("p", "This is a paragraph with too many new lines"),
                         LeafNode("p", "This is the final paragraph")
