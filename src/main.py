@@ -17,7 +17,7 @@ def delete_dir_contents(dir_path):
             print(f"deleted directory '{item}' from public/")
         else:
             os.remove(dir_path + item)
-            print(f"deleted file '{item}' from {"/".join(dir_path.split("/")[-2:])}")
+            print(f"deleted file '{item}' from {'/'.join(dir_path.split('/')[-2:])}")
 
 
 def copy_dir_contents(src_dir_path, dest_dir_path):
