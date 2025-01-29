@@ -55,7 +55,7 @@ def block_to_children(block, block_type):
         return list_item_nodes
 
     if block_type == "code":
-        text_nodes = text_to_textnode(block[3:-3])
+        text_nodes = text_to_textnode(block[4:-3])
     elif block_type == "heading":
         size = get_heading_size(block)
         text_nodes = text_to_textnode(block[size + 1:])
