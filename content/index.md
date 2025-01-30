@@ -1,32 +1,39 @@
-# Tolkien Fan Club
+# Example Page
 
-**I like Tolkien**. Read my [first post here](/majesty)
+**This is a simple markdown file**. See an example article [here](/majesty)
 
-> All that is gold does not glitter
+## Bold and Italic Text
 
-## Reasons I like Tolkien
+**This is bold text!**
 
-* You can spend years studying the legendarium and still not understand its depths
-* It can be enjoyed by children and adults alike
-* Disney *didn't ruin it*
-* It created an entirely new genre of fantasy
+*This is italic text.*
 
-## My favorite characters (in order)
+## Quote Block
 
-1. Gandalf
-2. Bilbo
-3. Sam
-4. Glorfindel
-5. Galadriel
-6. Elrond
-7. Thorin
-8. Sauron
-9. Aragorn
+> This is a quote block.
 
-Here's what `elflang` looks like (the perfect coding language):
+## Unordered Lists
+
+* List item
+* Another list item
+* A *third* list item
+* the **final** unordered list item
+
+## Ordered Lists
+
+1. First item
+2. Second item
+3. This is the third item
+4. Fourth item
+5. The fifth and final item
+
+## Code
+
+To show a code block, this is what the `main()` function in a hello world C program should look like:
 
 ```
-func main(){
-    fmt.Println("Hello, World!")
+int main(void){
+    printf("Hello, World!\n");
+    return 0;
 }
 ```
